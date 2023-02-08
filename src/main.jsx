@@ -1,10 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import { createRoot } from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+import App from './components/App'
+import './styles/index.css'
+
+const root = document.getElementById('root')
+
+createRoot(root).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )

@@ -1,9 +1,9 @@
-const UserCard = ({ name, validate,age =0}) => {
+const UserCard = ({ name, validate, age = 0 }) => {
   return (
     <article>
       <h2>{name}</h2>
       <p>{validate ? ':smiley:' : 'smiling_face_with_tear'}</p>
-      <p>{age <=18 ? 'puede entrar' : 'no puede entrar'}</p>
+      <p>{age <= 18 ? 'puede entrar' : 'no puede entrar'}</p>
     </article>
   )
 }

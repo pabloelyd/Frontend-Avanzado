@@ -1,8 +1,6 @@
 
 import '../styles/App.css'
-import { UserCard, UserCard1 } from './UserCard'
 import ProductCard from './ProductCard'
-
 
 function App () {
   return (
@@ -10,7 +8,10 @@ function App () {
       <h1 className='text-center mb-5'>Lista de productos</h1>
       <section className='row'>
         <aside className='col-4'>
-          <ProductCard name='RedmiNote' count={10} price={100}/> 
+          <ProductCard name='RedmiNote' count={4} price={100} />
+        </aside>
+        <aside className='col-4'>
+          <ProductCard name='iphone' count={5} price={100} />
         </aside>
       </section>
     </div>
@@ -18,9 +19,9 @@ function App () {
 }
 
 export default App
-/*<UserCard name='Carlos' age= {19} validate={false} />
+/* <UserCard name='Carlos' age= {19} validate={false} />
       <UserCard name='Pablo' validate />
       <UserCard name='Juan' />
       <UserCard1 name='didi' />
-      
-      Estos iban dentro del div*/
+
+      Estos iban dentro del div */

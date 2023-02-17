@@ -4,12 +4,13 @@ import ProductCard from './ProductCard'
 import { products } from '../../db.json'
 
 function App () {
-  const mappingProducts = products.map(({ id, title, stock, price, thumbnail }) => ({
+  const mappingProducts = products.map(({ id, title, stock, price, thumbnail, images }) => ({
     id,
     price,
     name: title,
     count: stock,
-    photo: thumbnail
+    photo: thumbnail,
+    images
   }))
 
   return (

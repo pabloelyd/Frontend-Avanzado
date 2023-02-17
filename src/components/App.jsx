@@ -1,18 +1,26 @@
 
 import '../styles/App.css'
 import ProductCard from './ProductCard'
+import { products } from '../../db.json'
 
 function App () {
+  const mappingProducts = products.map(({ id, title, stock, price, thumbnail }) => ({
+    id,
+    price,
+    name: title,
+    count: stock,
+    photo: thumbnail
+  }))
+
   return (
     <div className='container py-5'>
       <h1 className='text-center mb-5'>Lista de productos</h1>
       <section className='row'>
-        <aside className='col-4'>
-          <ProductCard name='RedmiNote' count={4} price={100} />
-        </aside>
-        <aside className='col-4'>
-          <ProductCard name='iphone' count={5} price={100} />
-        </aside>
+        {mappingProducts.map(product => (
+          <aside key={product.id} className='col-4'>
+            <ProductCard {...product} />
+          </aside>
+        ))}
       </section>
     </div>
   )

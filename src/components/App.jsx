@@ -3,21 +3,22 @@ import '../styles/App.css'
 import ProductCard from './ProductCard'
 import { useState, useEffect } from 'react'
 
-const API_URL = 'https://dummyjson.com/products'
+const LIMIT = 12
+const SELECT_PROPS = 'id, title,stock,price,thumbnail'
 
+const API_URL = `https://dummyjson.com/products?limit=${LIMIT}&select=${SELECT_PROPS}`
 function App () {
   const [products, setProducts] = useState([])
 
-  const fetchProducts = async()=>{
+  const fetchProducts = async () => {
     const request = await window.fetch(API_URL)
-    const {products} = await request.json()
+    const { products } = await request.json()
     setProducts(products)
   }
 
   useEffect(() => {
     fetchProducts()
   }, [])
-
 
   const mappingProducts = products.map(({ id, title, stock, price, thumbnail }) => ({
     id,

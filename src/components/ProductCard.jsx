@@ -11,8 +11,8 @@ const ProductCard = ({ name, price = 0, count = 0, photo, isFav }) => {
         <p className='card-text'>Price: {price} MX</p>
         {count === 0 ? <p>No hay productos</p> : <p className='card-text'>Stock: {count}</p>}
         <div className='d-flex align-items-center gap-3'>
-        <ButtonsCounter count={count} />
-        <Buttonisfav isFavProp={isFav} />
+          <ButtonsCounter count={count} />
+          <Buttonisfav isFavProp={isFav} />
         </div>
       </div>
     </article>
